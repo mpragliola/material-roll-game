@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 # One-off helper: creates the public repo, pushes, waits for the first deploy and switches GitHub Pages to the gh-pages branch.
 set -euo pipefail
-OWNER="${1:-mpragliola}"; REPO=material-roll
+OWNER="${1:-mpragliola}"; REPO=material-roll-game
 gh repo create "$OWNER/$REPO" --public --source . --remote origin --push \
   --description "Material Roll: a 3D physics cannon puzzle game (Three.js + Rapier) with a level editor"
 echo "Waiting for the first deploy to create the gh-pages branch..."
