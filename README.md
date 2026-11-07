@@ -3,6 +3,8 @@
 A 3D physics puzzle game: aim a cannon (azimuth, elevation, power) and fire **one** ball at the goal inside a voxel room.
 It is a single `index.html` built with [Three.js](https://threejs.org/) and the [Rapier](https://rapier.rs/) physics engine, and it includes a level editor.
 
+![Material Roll: the cannon in the first level](docs/screenshot.jpg)
+
 ## Play
 
 **[Play the demo](https://mpragliola.github.io/material-roll-game/)**
