@@ -5,7 +5,7 @@ It is a single `index.html` built with [Three.js](https://threejs.org/) and the 
 
 ## Play
 
-**[Play the demo](https://mpragliola.github.io/material-roll/)**
+**[Play the demo](https://mpragliola.github.io/material-roll-game/)**
 
 It runs in any modern desktop or tablet browser. Three.js and Rapier are loaded from a CDN, so you need an internet connection.
 
@@ -26,7 +26,7 @@ The editor's export button gives the same structure as JSON, and the import butt
 ## Deployment
 
 Pushing to `main` runs `.github/workflows/deploy-pages.yml`, which copies `index.html` to the `gh-pages` branch with `keep_files: true`, so other content on that branch is not disturbed.
-Pushing to `develop` publishes to `/unstable/`. The site is served at `https://mpragliola.github.io/material-roll/`.
+Pushing to `develop` publishes to `/unstable/`. The site is served at `https://mpragliola.github.io/material-roll-game/`.
 
 ## Run locally
 

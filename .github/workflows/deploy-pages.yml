@@ -1,7 +1,7 @@
 name: Deploy To GitHub Pages
 
 # Same scheme as mpragliola/pedalboard-planner: the gh-pages branch is updated with keep_files,
-# so each repo owns its own subfolder (https://mpragliola.github.io/material-roll/) and other
+# so each repo owns its own subfolder (https://mpragliola.github.io/material-roll-game/) and other
 # sites or subfolders are left untouched. main -> site root, develop -> /unstable/.
 on:
   push:
