@@ -196,6 +196,7 @@ textarea { width: 100%; box-sizing: border-box; background: #0d1117; color: var(
 .card code { color: var(--fg); }
 .row2 { display: flex; gap: 8px; }
 #status { position: fixed; inset: 0; display: flex; align-items: center; justify-content: center; padding: 24px; text-align: center; background: var(--bg); color: var(--muted); z-index: 9; line-height: 1.6; }
+[hidden] { display: none !important; }   /* author display rules (e.g. #status flex) must not defeat the hidden attribute */
 /* minimal play HUD: one thin line on top, one thin bar at the bottom; the rest opens on demand */
 .brand { padding: 4px 10px; display: flex; gap: 10px; align-items: baseline; flex-wrap: wrap; }
 .brand h1, #lvDims { display: none; }
