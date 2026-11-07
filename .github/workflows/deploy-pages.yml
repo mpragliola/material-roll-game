@@ -1,0 +1,48 @@
+name: Deploy To GitHub Pages
+
+# Same scheme as mpragliola/pedalboard-planner: the gh-pages branch is updated with keep_files,
+# so each repo owns its own subfolder (https://mpragliola.github.io/material-roll/) and other
+# sites or subfolders are left untouched. main -> site root, develop -> /unstable/.
+on:
+  push:
+    branches: [main, master, develop]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Assemble site
+        run: |
+          mkdir site
+          cp index.html site/index.html
+          touch site/.nojekyll
+
+      - name: Deploy stable (root)
+        if: github.ref_name != 'develop'
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_branch: gh-pages
+          publish_dir: ./site
+          keep_files: true
+
+      - name: Deploy unstable (/unstable)
+        if: github.ref_name == 'develop'
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_branch: gh-pages
+          publish_dir: ./site
+          destination_dir: unstable
+          keep_files: true
